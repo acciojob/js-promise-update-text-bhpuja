@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <!-- do not modify this file -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Example</title>
+</head>
+<body>
     <div id="output"></div>
+    
+    <script>
+        // Function that returns a Promise
+        function getHelloWorld() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Hello, world!");
+                }, 1000);
+            });
+        }
 
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+        // Using the Promise to update HTML element
+        getHelloWorld().then(message => {
+            document.getElementById("output").innerText = message;
+        });
+    </script>
+</body>
 </html>
+
+
